@@ -3,14 +3,30 @@
 	--darkred: #7F0036;
 	--lightgray: #e0e0e0;
 	--gray: #C0C0C0;
-	--darkgray: #666;
-	--navy: #17050F;
+	--darkgray: #333;
+	--navy: red;
 	--blue: #082840;
 	--white: #fff;
+
+	--type-h1: 3.157em;
+	--type-h2: 2.369em;
+	--type-h3: 1.777em;
+	--type-h4: 1.333em;
+
+	--unit-large: var(--type-h1);
+	--unit-medium: var(--type-h2);
+	--unit-small: var(--type-h3);
+	--unit-x-small: var(--type-h4);
+
+	--unit-xx-small: 0.75em;
+
+	--max-type-width: 37.5em; /* 600px /16 */
 }
+
 * {
 	box-sizing: border-box;
 }
+
 html,
 body {
 	padding: 0;
@@ -18,14 +34,41 @@ body {
 	font-family: sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
+	font-size: 1em;
+	line-height: 1.45;
 }
+@media only screen and (min-width: 768px) {
+	html,
+	body {
+		font-size: 1.15em;
+	}
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--unit-large);
+}
+h2 {font-size: var(--unit-medium);}
+h3 {font-size: var(--unit-small);}
+h4 {font-size: var(--unit-x-small);}
+
+small, .font_small {font-size: var(--unit-xx-small);}
+
+p {margin-bottom: var(--unit-small);}
+
 p:last-child {
 	margin-bottom: 0;
 }
 p,
 .tmpl-post li,
 img {
-	max-width: 37.5em; /* 600px /16 */
+	max-width: var(--type-max:);
 }
 p,
 .tmpl-post li {
@@ -38,7 +81,9 @@ a[href]:visited {
 	color: var(--navy);
 }
 main {
-	padding: 1rem;
+	max-width: var(--max-type-width);
+	margin-left: auto;
+	margin-right: auto;
 }
 main :first-child {
 	margin-top: 0;
@@ -57,7 +102,7 @@ code {
 	line-height: 1.5;
 }
 pre {
-	font-size: 14px;
+	font-size: var(--unit-x-small);
 	line-height: 1.375;
 	direction: ltr;
 	text-align: left;
@@ -72,8 +117,11 @@ pre {
 	-ms-hyphens: none;
 	hyphens: none;
 	padding: 1em;
-	margin: .5em 0;
 	background-color: #f6f6f6;
+	width: 140%;
+	margin-left: -20%;
+	margin-right: -20%;
+	border-radius: 0.1em;
 }
 .highlight-line {
 	padding: 0.125em 1em; /* 2px 16px /16 */
@@ -180,7 +228,12 @@ a[href].tag:visited {
 /* Warning */
 .warning {
 	background-color: #ffc;
-	padding: 1em 0.625em; /* 16px 10px /16 */
+	padding: var(--unit-small); /* 16px 10px /16 */
+	margin-top: var(--unit-medium)!important;
+	margin-bottom: var(--unit-medium);
+	transform: rotate(-2deg);
+	border: solid 1px #ccc;
+	border-radius: 0.3em;
 }
 .warning ol:only-child {
 	margin: 0;

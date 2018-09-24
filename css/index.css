@@ -8,6 +8,7 @@
 	--blue: #082840;
 	--white: #fff;
 
+	--base-font: 1em;
 	--type-h1: 3.157em;
 	--type-h2: 2.369em;
 	--type-h3: 1.777em;
@@ -21,8 +22,15 @@
 	--unit-xx-small: 0.75em;
 
 	--max-type-width: 37.5em; /* 600px /16 */
+
+	--breakpoint-small: 768px;
 }
 
+@media only screen and (min-width: 500px) {
+	:root {
+		--base-font: 1.15em;
+	}
+}
 * {
 	box-sizing: border-box;
 }
@@ -34,15 +42,10 @@ body {
 	font-family: sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
-	font-size: 1em;
+	font-size: var(--base-font);
 	line-height: 1.45;
 }
-@media only screen and (min-width: 768px) {
-	html,
-	body {
-		font-size: 1.15em;
-	}
-}
+
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;

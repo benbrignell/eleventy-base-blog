@@ -22,8 +22,6 @@
 	--unit-xx-small: 0.75em;
 
 	--max-type-width: 37.5em; /* 600px /16 */
-
-	--breakpoint-small: 768px;
 }
 
 @media only screen and (min-width: 500px) {
